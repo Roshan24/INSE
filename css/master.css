@@ -1,0 +1,45 @@
+:root {
+    --nav-font-size: 1.2rem;
+}
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+#nav {
+    display: block;
+    width: 100vw;
+    background-color: orange;
+    font-size: var(--nav-font-size);
+    /* padding: 20px 5vw 20px 5vw; */
+    height: calc(var(--nav-font-size) + 4vh);
+}
+
+#nav>a {
+    background-color: red;
+    top: 1.9vh;
+}
+
+#nav>a, #nav-login {
+    position: relative;
+    padding: 2vh 2.5vw 2vh 2.5vw;
+}
+
+#nav>a, #nav-login>a {
+    text-decoration: none;
+}
+
+#nav-login {
+    float: right;
+    top: -0.1vh;
+    background-color: lime;
+}
+
+#nav>a:hover {
+    background-color: green;
+}
+
+#nav>a.active {
+    background-color: yellow;
+}
