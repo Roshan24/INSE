@@ -1,4 +1,9 @@
 :root {
+
+  --bg: linear-gradient(to top, black, orange 100%);
+
+  height: 100%;
+
     --nav-font-size: 1.2rem;
 }
 
@@ -7,17 +12,25 @@
     margin: 0;
 }
 
+body{
+  background: var(--bg);
+
+
+}
+
 #nav {
     display: block;
     width: 100vw;
-    background-color: orange;
+    color: black;
+    /* background-color: orange; */
     font-size: var(--nav-font-size);
     /* padding: 20px 5vw 20px 5vw; */
     height: calc(var(--nav-font-size) + 4vh);
 }
 
 #nav>a {
-    background-color: red;
+    /* background-color: red; */
+    color: black;
     top: 1.9vh;
 }
 
@@ -33,13 +46,16 @@
 #nav-login {
     float: right;
     top: -0.1vh;
-    background-color: lime;
+    background-color: white;
+    color: black;
 }
 
 #nav>a:hover {
-    background-color: green;
+    background-color: black;
+    color: white;
 }
 
 #nav>a.active {
-    background-color: yellow;
+    background-color: white;
+    color: black;
 }
