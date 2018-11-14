@@ -22,3 +22,7 @@ function setActive(page, nav) {
         }
     }
 }
+
+function styleMobileNav() {
+
+}
