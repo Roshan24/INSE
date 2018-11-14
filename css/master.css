@@ -1,35 +1,29 @@
 :root {
-
-  --bg: linear-gradient(to top, black, orange 100%);
-
-  height: 100%;
-
+    /* for defining variables only! */
+  --background: linear-gradient(to top, black 0%, orange 100%);
     --nav-font-size: 1.2rem;
 }
 
 * {
     font-family: sans-serif;
     margin: 0;
+    height: 100%;
 }
 
 body{
-  background: var(--bg);
-
-
+  background: var(--background);
 }
 
 #nav {
     display: block;
     width: 100vw;
     color: black;
-    /* background-color: orange; */
+    background-color: red;
     font-size: var(--nav-font-size);
-    /* padding: 20px 5vw 20px 5vw; */
     height: calc(var(--nav-font-size) + 4vh);
 }
 
 #nav>a {
-    /* background-color: red; */
     color: black;
     top: 1.9vh;
 }
@@ -46,8 +40,9 @@ body{
 #nav-login {
     float: right;
     top: -0.1vh;
-    background-color: white;
+    background-color: blue;
     color: black;
+    height: calc(var(--nav-font-size) + 1px);
 }
 
 #nav>a:hover {
@@ -58,4 +53,15 @@ body{
 #nav>a.active {
     background-color: white;
     color: black;
+}
+
+#mobile-nav {
+    position: absolute;
+}
+
+/* mobile friendly */
+@media only screen and (max-width: 531px) {
+    #nav {
+        display: none;
+    }
 }
