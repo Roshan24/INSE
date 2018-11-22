@@ -56,14 +56,7 @@ body{
 }
 
 #mobile-nav {
-    background: #ECC264;
-    border-right: 1px solid #e5e5e5;
-    position: fixed;
-    margin: 0;
-    left: 0;
-    bottom: 0;
-    height: auto;
-    width: 100%;
+  display: none;
 }
 
 #mobile-nav>a {
@@ -73,6 +66,19 @@ body{
 /* mobile friendly */
 @media only screen and (max-width: 531px) {
     #nav {
-        display: none;
+      display: none;
     }
+
+    #mobile-nav {
+      display: block;
+      background: #ECC264;
+      border-right: 1px solid #e5e5e5;
+      position: fixed;
+      margin: 0;
+      left: 0;
+      bottom: 0;
+      height: auto;
+      width: 100%;
+    }
+
 }
