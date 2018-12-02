@@ -13,6 +13,12 @@ function loadNavBar() {
     setActive(window.location.href, nav);
 }
 
+function loadLogo(){
+//   const logo = document.getElementById("logo");
+//   nav.innerHTML = <img src="" alt = "SportVantage">
+//
+}
+
 function setActive(page, nav) {
     const navChildren = nav.children;
     for (const child of navChildren) {

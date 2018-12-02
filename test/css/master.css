@@ -1,6 +1,6 @@
 :root {
     /* for defining variables only! */
-    --background: linear-gradient(to top, black 0%, orange 100%);
+    --background: linear-gradient(to top, white 0%, black 100%);
     --nav-font-size: 1.2rem;
 }
 
@@ -17,14 +17,14 @@ body{
 #nav {
     display: block;
     width: 100vw;
-    color: black;
-    background-color: red;
+    color: white;
+    /* background-color: red; */
     font-size: var(--nav-font-size);
     height: calc(var(--nav-font-size) + 4vh);
 }
 
 #nav>a {
-    color: black;
+    color: white;
     top: 1.9vh;
 }
 
@@ -40,8 +40,8 @@ body{
 #nav-login {
     float: right;
     top: -0.1vh;
-    background-color: blue;
-    color: black;
+    /* background-color: blue; */
+    color: white;
     height: calc(var(--nav-font-size) + 1px);
 }
 
@@ -63,15 +63,24 @@ body{
     /* margin-left: calc() */
 }
 
+#logo{
+  position: fixed;
+  top: 50%;
+  right: 40%;
+  left: 40%;
+}
+
+
+
 /* mobile friendly */
-@media only screen and (max-width: 531px) {
+@media only screen and (max-width: 1440px) {
     #nav {
       display: none;
     }
 
     #mobile-nav {
       display: block;
-      background: #ECC264;
+      /* background: var(--background); */
       border-right: 1px solid #e5e5e5;
       position: fixed;
       margin: 0;
