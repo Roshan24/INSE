@@ -1,6 +1,6 @@
 :root {
     /* for defining variables only! */
-    --background: linear-gradient(to top, white 0%, black 100%);
+    --background: linear-gradient(to top, white 0%, black 50%, white 100%);
     --nav-font-size: 1.2rem;
 }
 
@@ -20,7 +20,8 @@ body{
     color: white;
     /* background-color: red; */
     font-size: var(--nav-font-size);
-    height: calc(var(--nav-font-size) + 4vh);
+    height: 50px;
+    /* position: fixed; */
 }
 
 #nav>a {
@@ -30,7 +31,9 @@ body{
 
 #nav>a, #nav-login {
     position: relative;
-    padding: 2vh 2.5vw 2vh 2.5vw;
+    padding: 7px 30px 7px 30px;
+    margin: 0 5px 0 5px;
+    border-radius: 5px;
 }
 
 #nav>a, #nav-login>a {
@@ -70,10 +73,12 @@ body{
   left: 40%;
 }
 
-
+#test {
+  margin-top: 75px;
+}
 
 /* mobile friendly */
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 500px) {
     #nav {
       display: none;
     }

@@ -1,10 +1,19 @@
 'use strict';
 
-function init() {
-    loadNavBar();
-}
+window.addEventListener("load", () => {
 
-window.addEventListener("load", init);
+  //Code below for future stuff
+
+  // window.addEventListener("scroll", (e) => {
+  //   e.preventDefault();
+  //   var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+  //   // document.getElementById("nav").style.paddingLeft = scrollTop;
+  //   $("nav").css("margin-left", scrollTop + "px");
+  //   console.log(scrollTop);
+  // })
+
+    loadNavBar();
+});
 
 function loadNavBar() {
     const nav = document.getElementById("nav");
