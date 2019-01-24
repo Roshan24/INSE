@@ -1,61 +1,69 @@
 :root {
-    /* for defining variables only! */
-    --background: linear-gradient(to top, white 0%, black 50%, white 100%);
-    --nav-font-size: 1.2rem;
+  /* for defining variables only! */
+  /* --background: linear-gradient(to top, white 0%, black 50%, white 100%); */
+  --background: #ff9143;
+  --nav-font-size: 1.2rem;
 }
 
 * {
-    font-family: sans-serif;
-    margin: 0;
-    height: 100%;
+  font-family: sans-serif;
+  margin: 0;
+  /* height: 100%; */
 }
 
 body{
-  background: var(--background);
+  background-color: var(--background);
+  z-index: -1;
 }
 
 #nav {
-    display: block;
-    width: 100vw;
-    color: white;
-    /* background-color: red; */
-    font-size: var(--nav-font-size);
-    height: 50px;
-    /* position: fixed; */
+  top: 0;
+  position: fixed;
+  display: block;
+  width: 100vw;
+  color: white;
+  /* background-color: red; */
+  background-color: var(--background);
+  box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.3);
+  font-size: var(--nav-font-size);
+  height: 60px;
+  /* position: fixed; */
+  z-index: 10;
 }
 
 #nav>a {
-    color: white;
-    top: 1.9vh;
+  color: white;
+  top: 1.9vh;
 }
 
 #nav>a, #nav-login {
-    position: relative;
-    padding: 7px 30px 7px 30px;
-    margin: 0 5px 0 5px;
-    border-radius: 5px;
+  position: relative;
+  padding: 7px 30px 7px 30px;
+  margin: 0 5px 0 5px;
+  border-radius: 5px;
 }
 
 #nav>a, #nav-login>a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 #nav-login {
-    float: right;
-    top: -0.1vh;
-    /* background-color: blue; */
-    color: white;
-    height: calc(var(--nav-font-size) + 1px);
+  float: right;
+  top: 0.75vh;
+  /* padding-top: 10px; */
+  /* background-color: blue; */
+  color: white;
+  height: calc(var(--nav-font-size) + 1px);
 }
 
 #nav>a:hover {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 #nav>a.active {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 #mobile-nav {
@@ -63,7 +71,7 @@ body{
 }
 
 #mobile-nav>a {
-    /* margin-left: calc() */
+  /* margin-left: calc() */
 }
 
 #logo{
@@ -77,22 +85,78 @@ body{
   margin-top: 75px;
 }
 
+#login-modal {
+  position: absolute;
+  top: calc(50% - 35vh);
+  left: calc(50% - 30vw);
+  height: 70vh;
+  width: 60vw;
+  background-color: green;
+}
+
+#login-modal>form {
+  position: inherit;
+  width: 80%;
+  height: 60%;
+  top: 30%;
+  left: 10%;
+}
+
+#login-modal>h1 {
+  display: block;
+  positon: inherit;
+  text-align: center;
+  padding-top: 5%;
+}
+
+#login-modal > form > input {
+  display: inline-block;
+  /* position: absolute; */
+  margin-left: 5px;
+
+  border: 20px solid light-blue;
+}
+
+/* #login-modal>label {
+  margin-right: 20px;
+} */
+
+.hidden {
+  display: none;
+}
+
+#close {
+  position: absolute;
+  left: calc(100% - 35px);
+  top: 10px;
+  border-radius: 100px;
+  border: none;
+  background-color: rgb(200, 200, 200);
+  width: 25px;
+  height: 25px;
+  font-size: 1rem;
+  color: rgba(120, 120, 120, 0.95);
+  cursor: pointer;
+  outline: none;
+}
+
 /* mobile friendly */
 @media only screen and (max-width: 500px) {
-    #nav {
-      display: none;
-    }
 
-    #mobile-nav {
-      display: block;
-      /* background: var(--background); */
-      border-right: 1px solid #e5e5e5;
-      position: fixed;
-      margin: 0;
-      left: 0;
-      bottom: 0;
-      height: auto;
-      width: 100%;
-    }
+  #nav {
+    display: none;
+  }
+
+  #mobile-nav {
+    display: block;
+    /* background: var(--background); */
+    border-right: 1px solid #e5e5e5;
+    position: fixed;
+    margin: 0;
+    left: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+  }
 
 }
