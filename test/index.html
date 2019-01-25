@@ -15,34 +15,24 @@
           THIS IS WHERE THE LOGO SHOULD BE
         </div>
 
-        <!-- <div id="login-modal" class="hidden">
-            <button id="close">x</button>
-          <h1>Login</h1>
-          <form>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" size="80" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" size="80" minlength="8" required>
-          </form>
-        </div> -->
-
         <div id="login-modal" class="hidden">
-            <button id="close">x</button>
-          <h1>Login</h1>
-          <!-- <form>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" size="80" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" size="80" minlength="8" required>
-          </form> -->
+          <button id="close">x</button>
+          <h1 id="login-modal-title">Login</h1>
 
           <form>
-            <input required type="text">
-            <label alt="Email" placeholder="Type your Email"></label>
+            <label>
+              <input type="email" name="email" required>
+              <div class="label-text">Email</div>
+            </label>
+            <label>
+              <input type="password" required>
+              <div class="label-text">Password</div>
+            </label>
+            <label id="confirm-password">
+              <input type="password" required>
+              <div class="label-text">Confirm Password</div>
+            </label>
+            <button id="submit">Submit</button>
           </form>
 
         </div>

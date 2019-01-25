@@ -9,8 +9,12 @@ window.addEventListener("load", () => {
   });
 
   const loginBtn = document.getElementById("login");
-  loginBtn.addEventListener("click", () => {
-    document.getElementById("login-modal").className = "";
+  const signupBtn = document.getElementById("signup");
+  loginBtn.addEventListener("click", (e) => {
+    handleLoginBtnClicked(e);
+  });
+  signup.addEventListener("click", (e) => {
+    handleLoginBtnClicked(e);
   });
 
   const closeBtn = document.getElementById("close");
@@ -35,6 +39,7 @@ function loadLogo(){
 
 function setActive(page, nav) {
     const navChildren = nav.children;
+
     for (const child of navChildren) {
         child.className = "";
         if (child.href == page) {
@@ -57,4 +62,12 @@ function handleScroll(e) {
    } else {
      $('nav').css("box-shadow", "0 -5px 3px rgba(0, 0, 0, 0.3)");
    }
+}
+
+function handleLoginBtnClicked(e) {
+
+  document.getElementById("login-modal").className = "";
+  document.getElementById("confirm-password").className = (e.target.textContent === "Login")?"hidden":"";
+
+  document.getElementById("login-modal-title").textContent = e.target.textContent;
 }
