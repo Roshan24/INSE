@@ -1,10 +1,24 @@
 'use strict';
 
-function init() {
-    loadNavBar();
-}
+window.addEventListener("load", () => {
 
-window.addEventListener("load", init);
+  loadNavBar();
+
+  window.addEventListener("scroll", (e) => {
+    handleScroll(e);
+  });
+
+  const loginBtn = document.getElementById("login");
+  loginBtn.addEventListener("click", () => {
+    document.getElementById("login-modal").className = "";
+  });
+
+  const closeBtn = document.getElementById("close");
+  closeBtn.addEventListener("click", () => {
+    document.getElementById("login-modal").className = "hidden";
+  })
+
+});
 
 function loadNavBar() {
     const nav = document.getElementById("nav");
@@ -31,4 +45,16 @@ function setActive(page, nav) {
 
 function styleMobileNav() {
 
+}
+
+function handleScroll(e) {
+  e.preventDefault();
+  let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+  // document.getElementById("nav").style.paddingLeft = scrollTop;
+  // $("nav").css("margin-left", scrollTop + "px");
+   if (scrollTop > 0) {
+     $('nav').css("box-shadow", "0 0 5px rgba(0, 0, 0, 0.3)");
+   } else {
+     $('nav').css("box-shadow", "0 -5px 3px rgba(0, 0, 0, 0.3)");
+   }
 }
