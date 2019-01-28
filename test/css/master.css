@@ -16,6 +16,10 @@ body{
   z-index: -1;
 }
 
+#account {
+  font-size: 36px;
+}
+
 #nav {
   top: 0;
   position: fixed;
@@ -118,6 +122,7 @@ body{
 
 .hidden {
   display: none;
+  visibility: hidden;
 }
 
 #close {
