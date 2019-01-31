@@ -1,0 +1,26 @@
+{
+  "name": "inse",
+  "version": "1.0.0",
+  "description": "INSE Coursework",
+  "main": "./test/server/server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./test/server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connorscott2/INSE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/connorscott2/INSE/issues"
+  },
+  "homepage": "https://github.com/connorscott2/INSE#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

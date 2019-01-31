@@ -27,6 +27,11 @@ window.addEventListener("load", () => {
     document.getElementById("login-modal").className = "hidden";
   })
 
+  const submitBtn = document.getElementById("submit");
+  submitBtn.addEventListener("click", (e) => {
+    handleUserLoginSignUp(e.target.textContent);
+  })
+
 });
 
 function loadNavBar() {
@@ -71,9 +76,19 @@ function handleScroll(e) {
 }
 
 function handleLoginBtnClicked(e) {
+  const loginForm = document.getElementById("login-form");
+  const buttonHTML = loginForm.innerHTML;
+
+  if (e.target.textContent === "Login") {
+    loginForm.innerHTML = '';
+    loginForm.innerHTML = '<label><input type="email" name="email" required><div class="label-text">Email</div></label><label><input type="password" name="password" required><div class="label-text">Password</div></label>' + buttonHTML;
+  } else if (e.target.textContent === "Sign up") {
+    loginForm.innerHTML = '';
+    loginForm.innerHTML = '<label><input type="email" name="email" required><div class="label-text">Email</div></label><label><input type="password" name="password" required><div class="label-text">Password</div></label>' + '<label id="confirm-password"><input type="password" name="confirm-password" required><div class="label-text">Confirm Password</div></label>' + buttonHTML;
+  }
   document.getElementById("login-modal").className = "";
-  document.getElementById("confirm-password").className = (e.target.textContent === "Login")?"hidden":"";
   document.getElementById("login-modal-title").textContent = e.target.textContent;
+  document.getElementById("submit").textContent = e.target.textContent;
 }
 
 // Below function uses localStorage to check whether user
@@ -91,4 +106,26 @@ function checkLoggedIn() {
     navLogin.innerHTML = '<i class="material-icons" id="account">account_circle</i>'
   }
 
+}
+
+function handleUserLoginSignUp(login) {
+
+  if (login === "LOGIN") {
+    console.log("Test");
+  }
+
+}
+
+async function postDataToServer(url = ``, data = {}) {
+  const response = fetch(url, {
+    method: "POST",
+    mode: "same-origin",
+    cache: "no-cache",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  const jsonResponse = response.json();
+  return jsonResponse;
 }
