@@ -77,7 +77,7 @@ function handleScroll(e) {
 
 function handleLoginBtnClicked(e) {
   const loginForm = document.getElementById("login-form");
-  const buttonHTML = loginForm.innerHTML;
+  const buttonHTML = '<button id="submit">Submit</button>';
 
   if (e.target.textContent === "Login") {
     loginForm.innerHTML = '';
@@ -110,7 +110,9 @@ function checkLoggedIn() {
 
 function handleUserLoginSignUp(login) {
 
-  if (login === "LOGIN") {
+  console.log(login);
+
+  if (login.toLowerCase() === "login") {
     console.log("Test");
   }
 
