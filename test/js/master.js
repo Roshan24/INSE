@@ -9,48 +9,27 @@ window.addEventListener("load", () => {
     handleScroll(e);
   });
 
-  const loginBtn = document.getElementById("login");
-  const signupBtn = document.getElementById("signup");
   const account = document.getElementById("account");
-  if (loginBtn) {
-    loginBtn.addEventListener("click", (e) => {
-      handleLoginBtnClicked(e);
-    });
-  }
-  if (signupBtn) {
-    signup.addEventListener("click", (e) => {
-      handleLoginBtnClicked(e);
-    });
-  }
+
   if (account) {
     account.addEventListener("click", (e) => {
       handleAccountBtnClicked();
     })
   }
 
-  const closeBtn = document.getElementById("close");
-  closeBtn.addEventListener("click", () => {
-    document.getElementById("login-modal").className = "hidden";
-  })
+  const page = window.location.href.slice(window.location.href.lastIndexOf("/", window.location.href.length));
 
-  const submitBtn = document.getElementById("submit");
-  submitBtn.addEventListener("click", (e) => {
-    handleUserLoginSignUp(e.target.textContent);
-  })
+  if (page === "/login.html") checkLoginSignUp();
+
+  // if (window.location.href.lastIndexOf("/", ))
 
 });
 
 function loadNavBar() {
     const nav = document.getElementById("nav");
-    nav.innerHTML = '<a href="index.html" class="active">Home</a><a href="sport.html">Sports</a><a href="league.html">Leagues</a><a href="about-us.html">About Us</a><span id="nav-login"><i class="material-icons" id="account">account_circle</i><a href="#" id="login">Login</a> or <a href="#" id="signup">Sign up</a></span>';
+    nav.innerHTML = '<a href="index.html" class="active">Home</a><a href="sport.html">Sports</a><a href="league.html">Leagues</a><a href="about-us.html">About Us</a><span id="nav-login"><i class="material-icons" id="account">account_circle</i><a href="login.html" id="login" onclick="localStorage.setItem(\'login\', \'true\')">Login</a> or <a href="login.html" id="signup" onclick="localStorage.setItem(\'login\', \'false\')">Sign up</a></span>';
 
     setActive(window.location.href, nav);
-}
-
-function loadLogo(){
-//   const logo = document.getElementById("logo");
-//   nav.innerHTML = <img src="" alt = "SportVantage">
-//
 }
 
 function setActive(page, nav) {
@@ -81,22 +60,6 @@ function handleScroll(e) {
    }
 }
 
-function handleLoginBtnClicked(e) {
-  const loginForm = document.getElementById("login-form");
-  const buttonHTML = '<button id="submit">Submit</button>';
-
-  if (e.target.textContent === "Login") {
-    loginForm.innerHTML = '';
-    loginForm.innerHTML = '<label><input type="email" name="email" required><div class="label-text">Email</div></label><label><input type="password" name="password" required><div class="label-text">Password</div></label>' + buttonHTML;
-  } else if (e.target.textContent === "Sign up") {
-    loginForm.innerHTML = '';
-    loginForm.innerHTML = '<label><input type="email" name="email" required><div class="label-text">Email</div></label><label><input type="password" name="password" required><div class="label-text">Password</div></label>' + '<label id="confirm-password"><input type="password" name="confirm-password" required><div class="label-text">Confirm Password</div></label>' + buttonHTML;
-  }
-  document.getElementById("login-modal").className = "";
-  document.getElementById("login-modal-title").textContent = e.target.textContent;
-  document.getElementById("submit").textContent = e.target.textContent;
-}
-
 // Below function uses localStorage to check whether user
 // is logged in, and ajusts nav bar accordingly
 
@@ -105,9 +68,9 @@ function checkLoggedIn() {
 
   if (localStorage.getItem("loggedIn") == undefined) {
     localStorage.setItem("loggedIn", "false");
-    navLogin.innerHTML = '<a href="#" id="login">Login</a> or <a href="#" id="signup">Sign up</a>'
+    navLogin.innerHTML = '<a href="login.html" id="login" onclick="localStorage.setItem(\'login\', \'true\')">Login</a> or <a href="login.html" id="signup" onclick="localStorage.setItem(\'login\', \'false\')">Sign up</a>'
   } else if (localStorage.getItem("loggedIn") == "false") {
-    navLogin.innerHTML = '<a href="#" id="login">Login</a> or <a href="#" id="signup">Sign up</a>'
+    navLogin.innerHTML = '<a href="login.html" id="login" onclick="localStorage.setItem(\'login\', \'true\')">Login</a> or <a href="login.html" id="signup" onclick="localStorage.setItem(\'login\', \'false\')">Sign up</a>'
   } else if (localStorage.getItem("loggedIn") == "true") {
     navLogin.innerHTML = '<i class="material-icons" id="account">account_circle</i>'
   }
@@ -119,13 +82,13 @@ function handleUserLoginSignUp(login) {
   console.log(login);
 
   if (login.toLowerCase() === "login") {
-    console.log("Test");
+
   }
 
 }
 
 function handleAccountBtnClicked() {
-  
+
 }
 
 async function postDataToServer(url = ``, data = {}) {
@@ -140,4 +103,17 @@ async function postDataToServer(url = ``, data = {}) {
   });
   const jsonResponse = response.json();
   return jsonResponse;
+}
+
+function checkLoginSignUp() {
+
+  if (localStorage.getItem("login") === "true") {
+    document.getElementById("confirm-password-label").className = "hidden";
+    document.getElementById("email-label").style.top = "25%";
+    document.getElementById("password-label").style.top = "50%";
+    localStorage.setItem("login", "");
+  } else if (localStorage.getItem("login") === "false") {
+    document.getElementById("confirm-password-label").className = "";
+    localStorage.setItem("login", "");
+  }
 }

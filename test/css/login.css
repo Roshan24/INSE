@@ -44,7 +44,7 @@ label {
 
 label>input {
   display: block; /* forces input onto next line */
-  margin-top: 2.5%;
+  margin-top: 15px;
   border: 0;
   border-bottom: 2px solid var(--background);
   width: 300px;
