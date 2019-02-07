@@ -11,6 +11,7 @@ window.addEventListener("load", () => {
 
   const loginBtn = document.getElementById("login");
   const signupBtn = document.getElementById("signup");
+  const account = document.getElementById("account");
   if (loginBtn) {
     loginBtn.addEventListener("click", (e) => {
       handleLoginBtnClicked(e);
@@ -20,6 +21,11 @@ window.addEventListener("load", () => {
     signup.addEventListener("click", (e) => {
       handleLoginBtnClicked(e);
     });
+  }
+  if (account) {
+    account.addEventListener("click", (e) => {
+      handleAccountBtnClicked();
+    })
   }
 
   const closeBtn = document.getElementById("close");
@@ -116,6 +122,10 @@ function handleUserLoginSignUp(login) {
     console.log("Test");
   }
 
+}
+
+function handleAccountBtnClicked() {
+  
 }
 
 async function postDataToServer(url = ``, data = {}) {

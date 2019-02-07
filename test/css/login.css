@@ -1,0 +1,84 @@
+:root {
+  --background: #ff9143;
+}
+
+#login-wrapper {
+  position: absolute;
+  top: 15vh;
+  left: 20vw;
+  width: 60vw;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#login-signup-h {
+  margin-top: 20px;
+  font-size: 3.5rem;
+}
+
+#submit {
+  position: inherit;
+  height: auto;
+  width: auto;
+  padding: 25px 175px 25px 175px;
+  bottom: 30px;
+  justify: center;
+  font-size: 1.5rem;
+  border: 0;
+  background-color: var(--background);
+  color: white;
+  border-radius: 40px;
+}
+
+#submit:hover, #submit:focus {
+  background-color: #333;
+  cursor: pointer;
+}
+
+label {
+  position: absolute;
+  font-size: 2rem;
+}
+
+label>input {
+  display: block; /* forces input onto next line */
+  margin-top: 2.5%;
+  border: 0;
+  border-bottom: 2px solid var(--background);
+  width: 300px;
+  height: auto;
+  font-size: 20px;
+  text-align: center;
+  outline: 0;
+  transition: width 0.2s ease-in-out;
+}
+
+label>input:focus {
+  width: 375px;
+}
+
+label>input:valid {
+  border-bottom-color: #2f8;
+}
+
+label>input:focus:invalid {
+  border-bottom-color: #f11;
+}
+
+#email-label {
+  top: 20%;
+}
+
+#password-label {
+  top: 40%;
+}
+
+#confirm-password-label {
+  top: 60%;
+}
+
+::placeholder {
+  text-align: center;
+}

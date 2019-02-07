@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="css/master.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
     <meta charset="utf-8">
     <title>Login | Signup</title>
   </head>
@@ -11,6 +12,19 @@
 
     <nav id="nav"></nav>
 
+    <div id="login-wrapper">
+      <h1 id="login-signup-h">Login</h1>
+      <label id="email-label">Email
+        <input type="email" id="email" name="email" required placeholder="example@example.com" autofocus>
+      </label>
+      <label id="password-label">Password
+        <input type="password" id="password" name="password" required placeholder="Enter Password">
+      </label>
+      <label id="confirm-password-label">Confirm Password
+        <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm Password">
+      </label>
+      <button id="submit">Submit</button>
+    </div>
 
     <script src="js/master.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

@@ -140,7 +140,7 @@ body{
   outline: none;
 }
 
-form {
+/* form {
   text-align: center;
 }
 
@@ -198,10 +198,10 @@ label input:valid + .label-text {
   -ms-transform: translateY(-74px);
   -webkit-transform: translateY(-74px);
   transform: translateY(-74px);
-}
+} */
 
-#submit {
-  background-color: #333333;
+/* #submit {
+  background-color: #333;
   border: 2px solid white;
   border-radius: 27px;
   color: white;
@@ -215,8 +215,12 @@ label input:valid + .label-text {
 
 #submit:hover, #submit:focus {
   background-color: white;
-  color: #333333;
+  color: #333;
   outline: 0;
+} */
+
+#account:hover {
+  cursor: pointer;
 }
 
 /* mobile friendly */
