@@ -9,50 +9,33 @@ window.addEventListener("load", () => {
     handleScroll(e);
   });
 
-  const loginBtn = document.getElementById("login");
-  const signupBtn = document.getElementById("signup");
-  const account = document.getElementById("account");
-  if (loginBtn) {
-    loginBtn.addEventListener("click", (e) => {
-      handleLoginBtnClicked(e);
-    });
-  }
-  if (signupBtn) {
-    signup.addEventListener("click", (e) => {
-      handleLoginBtnClicked(e);
-    });
-  }
-  if (account) {
-    account.addEventListener("click", (e) => {
-      handleAccountBtnClicked();
-    })
-  }
+  const login = document.getElementById("login");
+  login.addEventListener("click", () => {
+    localStorage.setItem("login", "true");
+  });
 
-  const closeBtn = document.getElementById("close");
-  closeBtn.addEventListener("click", () => {
-    document.getElementById("login-modal").className = "hidden";
-  })
-
-  const submitBtn = document.getElementById("submit");
-  submitBtn.addEventListener("click", (e) => {
-    handleUserLoginSignUp(e.target.textContent);
-  })
+  const signup = document.getElementById("signup");
+  signup.addEventListener("click", () => {
+    localStorage.setItem("login", "false");
+  });
 
 });
 
+//Loads and styles the navigtion bar
 function loadNavBar() {
     const nav = document.getElementById("nav");
-    nav.innerHTML = '<a href="index.html" class="active">Home</a><a href="sport.html">Sports</a><a href="league.html">Leagues</a><a href="about-us.html">About Us</a><span id="nav-login"><i class="material-icons" id="account">account_circle</i><a href="#" id="login">Login</a> or <a href="#" id="signup">Sign up</a></span>';
+    nav.innerHTML = '<a href="index.html" class="active">Home</a><a href="sport.html">Sports</a><a href="league.html">Leagues</a><a href="about-us.html">About Us</a><span id="nav-login"><i class="material-icons" id="account">account_circle</i><a href="login.html" id="login">Login</a> or <a href="login.html" id="signup">Sign up</a></span>';
 
     setActive(window.location.href, nav);
 }
 
-function loadLogo(){
-//   const logo = document.getElementById("logo");
-//   nav.innerHTML = <img src="" alt = "SportVantage">
-//
-}
-
+/**
+ * Set class of button to active page to 'active'
+ *
+ * @param page   href of the page the user is on
+ *
+ * @param nav    nav bar to be changed
+ */
 function setActive(page, nav) {
     const navChildren = nav.children;
 
@@ -65,13 +48,18 @@ function setActive(page, nav) {
 }
 
 //Will be implemented when mobile nav page is styled
-
 function styleMobileNav() {
 
 }
 
+/**
+ * Adds in fancy effect on scroll (shadow below nav bar)
+ *
+ * @param e   The screen
+ */
 function handleScroll(e) {
   e.preventDefault();
+  //Below finds where the user has scrolled to
   let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
    if (scrollTop > 0) {
@@ -81,63 +69,28 @@ function handleScroll(e) {
    }
 }
 
-function handleLoginBtnClicked(e) {
-  const loginForm = document.getElementById("login-form");
-  const buttonHTML = '<button id="submit">Submit</button>';
-
-  if (e.target.textContent === "Login") {
-    loginForm.innerHTML = '';
-    loginForm.innerHTML = '<label><input type="email" name="email" required><div class="label-text">Email</div></label><label><input type="password" name="password" required><div class="label-text">Password</div></label>' + buttonHTML;
-  } else if (e.target.textContent === "Sign up") {
-    loginForm.innerHTML = '';
-    loginForm.innerHTML = '<label><input type="email" name="email" required><div class="label-text">Email</div></label><label><input type="password" name="password" required><div class="label-text">Password</div></label>' + '<label id="confirm-password"><input type="password" name="confirm-password" required><div class="label-text">Confirm Password</div></label>' + buttonHTML;
-  }
-  document.getElementById("login-modal").className = "";
-  document.getElementById("login-modal-title").textContent = e.target.textContent;
-  document.getElementById("submit").textContent = e.target.textContent;
-}
-
 // Below function uses localStorage to check whether user
 // is logged in, and ajusts nav bar accordingly
-
 function checkLoggedIn() {
   const navLogin = document.getElementById("nav-login");
 
   if (localStorage.getItem("loggedIn") == undefined) {
     localStorage.setItem("loggedIn", "false");
-    navLogin.innerHTML = '<a href="#" id="login">Login</a> or <a href="#" id="signup">Sign up</a>'
+    navLogin.innerHTML = '<a href="login.html">Login</a> or <a href="login.html" id="signup">Sign up</a>'
   } else if (localStorage.getItem("loggedIn") == "false") {
-    navLogin.innerHTML = '<a href="#" id="login">Login</a> or <a href="#" id="signup">Sign up</a>'
+    navLogin.innerHTML = '<a href="login.html" id="login">Login</a> or <a href="login.html" id="signup">Sign up</a>'
   } else if (localStorage.getItem("loggedIn") == "true") {
     navLogin.innerHTML = '<i class="material-icons" id="account">account_circle</i>'
+
+    const account = document.getElementById("account");
+    account.addEventListener("click", (e) => {
+        handleAccountBtnClicked();
+    });
   }
 
 }
 
-function handleUserLoginSignUp(login) {
-
-  console.log(login);
-
-  if (login.toLowerCase() === "login") {
-    console.log("Test");
-  }
-
-}
-
+// TODO: Will redirect user to their personal profile
 function handleAccountBtnClicked() {
-  
-}
 
-async function postDataToServer(url = ``, data = {}) {
-  const response = fetch(url, {
-    method: "POST",
-    mode: "same-origin",
-    cache: "no-cache",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
-  const jsonResponse = response.json();
-  return jsonResponse;
 }
