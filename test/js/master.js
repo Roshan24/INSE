@@ -11,8 +11,29 @@ window.addEventListener("load", () => {
 
   //Special page load for login.html
   const page = window.location.href.slice(window.location.href.lastIndexOf("/", window.location.href.length));
-
   if (page === "/login.html") checkLoginSignUp();
+
+  const confirmPassword = document.getElementById("confirm-password");
+  if (confirmPassword) {
+    confirmPassword.addEventListener("input", (e) => {
+      checkConfirmPasswordValid(e.target);
+    });
+  }
+
+  const password = document.getElementById("password");
+  if (password) {
+    password.addEventListener("input", (e) => {
+      checkPasswordValid(e.target);
+      checkConfirmPasswordValid(confirmPassword);
+    })
+  }
+
+  const submit = document.getElementById("submit");
+  if (submit) {
+    submit.addEventListener("click", (e) => {
+      handleSubmit(e.target);
+    })
+  }
 
 });
 
@@ -87,14 +108,17 @@ function checkLoggedIn() {
 
 // TODO: Complete this function. Will handle the user
 // logging in/signing up
-function handleUserLoginSignUp(login) {
+function handleSubmit(e) {
+  if (e.textContent === "Login") {
+    // postDataToServer('profile.html', {
+    //   // username:
+    // });
+  } else if (e.textContent === "Sign Up") {
 
-  console.log(login);
-
-  if (login.toLowerCase() === "login") {
-
+  } else {
+    console.log(e.textContent);
+    throw new Error("Login Error");
   }
-
 }
 
 // TODO: Will redirect user to their personal profile
@@ -108,7 +132,7 @@ function handleAccountBtnClicked() {
  *
  * @param url            url post request is sent to
  *
- * @param data           data sent with the post request *                       to url
+ * @param data           data sent with the post request *                       to url in JSON format
  *
  * @return jsonResponse  JSON response from the server
  */
@@ -133,8 +157,27 @@ function checkLoginSignUp() {
     document.getElementById("email-label").style.top = "25%";
     document.getElementById("password-label").style.top = "50%";
     localStorage.setItem("login", "");
+    document.getElementById("submit").textContent = "Login";
   } else if (localStorage.getItem("login") === "false") {
     document.getElementById("confirm-password-label").className = "";
     localStorage.setItem("login", "");
+    document.getElementById("submit").textContent = "Sign Up";
   }
+}
+
+function checkPasswordValid(e) {
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,50}$/g;
+  const verification = regex.test(e.value);
+
+  e.style.borderBottomColor = (verification)?"#2F8":"#F11";
+}
+
+function checkConfirmPasswordValid(e) {
+  if (!e) return false;
+  if (e.value === "") return false;
+
+  const passwordElem = document.getElementById("password");
+  const password = passwordElem.value;
+
+  e.style.borderBottomColor = (e.value === password)?"#2F8":"#F11";
 }
