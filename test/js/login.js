@@ -47,12 +47,14 @@ function handleSubmit(e) {
 //Styles login.html depending on whether user is logging in or not
 function checkLoginSignUp() {
   if (localStorage.getItem("login") === "true") {
+    document.getElementById("login-signup-h").textContent = "Login";
     document.getElementById("confirm-password-label").className = "hidden";
     document.getElementById("email-label").style.top = "25%";
     document.getElementById("password-label").style.top = "50%";
     localStorage.setItem("login", "");
     document.getElementById("submit").textContent = "Login";
   } else if (localStorage.getItem("login") === "false") {
+    document.getElementById("login-signup-h").textContent = "Sign Up";
     document.getElementById("confirm-password-label").className = "";
     localStorage.setItem("login", "");
     document.getElementById("submit").textContent = "Sign Up";
