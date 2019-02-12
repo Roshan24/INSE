@@ -91,8 +91,7 @@ function checkPasswordValid(e) {
  *            checked
  */
 function checkConfirmPasswordValid(e) {
-  if (!e) return false;
-  if (e.value === "") return false;
+  if (!e || e.value === "") return false;
 
   const passwordElem = document.getElementById("password");
   const password = passwordElem.value;
