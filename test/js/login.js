@@ -63,17 +63,24 @@ function checkLoginSignUp() {
 
 /**
  * Checks if the user has entered a valid password using
- * a regular expression
+ * a regular expression. Shows user using coloured text/underlining
  *
  * @param e   Element of password to be checked
  */
 function checkPasswordValid(e) {
+  //Full regex:
   const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,50}$/g;
-  //Have to store regex test in variable before testing
-  //it due to a weird bug
-  const verification = regex.test(e.value);
 
-  e.style.borderBottomColor = (verification)?"#2F8":"#F11";
+  //Lists of regexs and elements
+  //[lowercase, uppercase, number, special, length]
+  const regexs = [/^(?=.*[a-z])/g, /^(?=.*[A-Z])/g, /^(?=.*\d)/g, /^(?=.*[@$!%*?&])/g, /^[A-Za-z\d@$!%*?&]{8,50}$/g];
+  const elems = [document.getElementById("lowercase"), document.getElementById("uppercase"), document.getElementById("number"), document.getElementById("special"), document.getElementById("length")];
+
+  for (let i = 0; i < regexs.length; i++) {
+    elems[i].style.color = (regexs[i].test(e.value))?"#2F8":"#F11";
+  }
+
+  e.style.borderBottomColor = (regex.test(e.value))?"#2F8":"#F11";
 }
 
 /**

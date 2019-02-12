@@ -82,3 +82,55 @@ label>input:focus:invalid {
 ::placeholder {
   text-align: center;
 }
+
+/**********************************/
+
+#password + #right {
+    min-width:250px;
+    max-width:300px;
+    top:50%;
+    left:100%;
+    margin-left:20px;
+    transform:translate(0, -50%);
+    padding:10px 20px;
+    color:#FFF;
+    background-color:#FF9143;
+    font-weight:normal;
+    font-size:13px;
+    border-radius:8px;
+    position:absolute;
+    z-index:99999999;
+    box-sizing:border-box;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    display:none;
+}
+
+#password + #right p {
+  color: #F11;
+}
+
+#password:focus + #right {
+    display:block;
+}
+
+#password + #right i {
+    position:absolute;
+    top:50%;
+    right:100%;
+    margin-top:-12px;
+    width:12px;
+    height:24px;
+    overflow:hidden;
+}
+
+#password + #right i::after {
+    content:'';
+    position:absolute;
+    width:12px;
+    height:12px;
+    left:0;
+    top:50%;
+    transform:translate(50%,-50%) rotate(-45deg);
+    background-color:#FF9143;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}

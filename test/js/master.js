@@ -10,14 +10,19 @@ window.addEventListener("load", () => {
   });
 
   const login = document.getElementById("login");
-  login.addEventListener("click", () => {
-    localStorage.setItem("login", "true");
-  });
+  if (login) {
+    login.addEventListener("click", () => {
+      localStorage.setItem("login", "true");
+    });
+  }
 
   const signup = document.getElementById("signup");
-  signup.addEventListener("click", () => {
-    localStorage.setItem("login", "false");
-  });
+  if (signup) {
+    signup.addEventListener("click", () => {
+      localStorage.setItem("login", "false");
+    });
+  }
+
 
 });
 

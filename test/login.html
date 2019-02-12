@@ -19,13 +19,23 @@
       </label>
       <label id="password-label">Password
         <input type="password" id="password" name="password" required placeholder="Enter Password">
+        <div id="right">
+          <h3>Password MUST:</h3>
+          <br />
+          <p id="lowercase">contain lowercase</p>
+          <p id="uppercase">contain uppercase</p>
+          <p id="number">contain number</p>
+          <p id="special">contain !, ?, @, $, %, &amp; or *</p>
+          <p id="length">be between 8 and 50 characters</p>
+          <i></i>
+        </div>
       </label>
       <label id="confirm-password-label">Confirm Password
         <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm Password">
       </label>
       <button id="submit">Submit</button>
     </div>
-    
+
     <script src="js/login.js"></script>
     <script src="js/master.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
