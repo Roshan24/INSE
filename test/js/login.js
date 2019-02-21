@@ -2,8 +2,7 @@
 
 window.addEventListener("load", () => {
 
-    const page = window.location.href.slice(window.location.href.lastIndexOf("/", window.location.href.length));
-    if (page === "/login.html") checkLoginSignUp();
+    checkLoginSignUp();
 
     const confirmPassword = document.getElementById("confirm-password");
     if (confirmPassword) {
@@ -66,7 +65,7 @@ function handleSubmit(e) {
 
 //Styles login.html depending on whether user is logging in or not
 function checkLoginSignUp() {
-    if (localStorage.getItem("login") === "true") {
+    if (localStorage.getItem("login") === "true" || !localStorage.getItem("login")) {
         document.getElementById("login-signup-h").textContent = "Login";
         document.getElementById("confirm-password-label").className = "hidden";
         document.getElementById("email-label").style.top = "25%";
