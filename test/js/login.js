@@ -38,7 +38,7 @@ function handleSubmit(e) {
     const confirmPassword = document.getElementById("confirmPassword");
 
     if (!confirmPassword) {
-        postDataToServer(`./profile.html`, {
+        postDataToServer(`profile.html`, {
             username,
             password
         });
@@ -52,16 +52,16 @@ function handleSubmit(e) {
 
 
 
-    if (e.textContent === "Login") {
-        // postDataToServer('profile.html', {
-        //   // username:
-        // });
-    } else if (e.textContent === "Sign Up") {
+    // if (e.textContent === "Login") {
+    //     // postDataToServer('profile.html', {
+    //     //   // username:
+    //     // });
+    // } else if (e.textContent === "Sign Up") {
 
-    } else {
-        console.log(e.textContent);
-        throw new Error("Login Error");
-    }
+    // } else {
+    //     console.log(e.textContent);
+    //     throw new Error("Login Error");
+    // }
 }
 
 //Styles login.html depending on whether user is logging in or not
@@ -139,6 +139,7 @@ async function postDataToServer(url = ``, data = {}) {
         },
         body: JSON.stringify(data),
     });
-    const jsonResponse = response.json();
-    return jsonResponse;
+    console.log(url);
+    // const jsonResponse = response.JSON();
+    // return jsonResponse;
 }
