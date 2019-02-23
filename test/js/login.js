@@ -32,20 +32,21 @@ window.addEventListener("load", () => {
 // logging in/signing up
 function handleSubmit(e) {
 
-    const username = document.getElementById("username");
+    const email = document.getElementById("email");
     const password = document.getElementById("password");
     const confirmPassword = document.getElementById("confirmPassword");
+    const dir = window.location.href.slice(0, window.location.href.lastIndexOf("/"));
 
     if (!confirmPassword) {
-        postDataToServer(`profile.html`, {
-            username,
-            password
+        postDataToServer(dir + `/profile.html`, {
+            email: email.value,
+            password: password.value
         });
     } else {
-        postDataToServer(`./profile.html`, {
-            username,
-            password,
-            confirmPassword
+        postDataToServer(dir + `/profile.html`, {
+            email: email.value,
+            password: password.value,
+            confirmPassword: confirmPassword.value
         });
     }
 
