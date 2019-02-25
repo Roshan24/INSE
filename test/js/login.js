@@ -32,6 +32,8 @@ window.addEventListener("load", () => {
 // logging in/signing up
 function handleSubmit(e) {
 
+    validateInputFields();
+
     const email = document.getElementById("email");
     const password = document.getElementById("password");
     const confirmPassword = document.getElementById("confirmPassword");
@@ -50,18 +52,19 @@ function handleSubmit(e) {
         });
     }
 
+    window.location.replace("profile.html");
+
+}
+
+function validateInputFields() {
+    let emailValid = false;
+    let passwordValid = false;
+    let confirmPasswordValid = false;
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
 
 
-    // if (e.textContent === "Login") {
-    //     // postDataToServer('profile.html', {
-    //     //   // username:
-    //     // });
-    // } else if (e.textContent === "Sign Up") {
-
-    // } else {
-    //     console.log(e.textContent);
-    //     throw new Error("Login Error");
-    // }
 }
 
 //Styles login.html depending on whether user is logging in or not
