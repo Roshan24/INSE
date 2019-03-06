@@ -6,3 +6,22 @@
 body {
   background: var(--background);
 }
+
+.parallax {
+  /*graphic*/
+  background-image: url("C:\Users\Liam Taylor\Desktop\Uni\INSE\INSE\test\sportX_graphic.png");
+
+  /*set height*/
+  min-height: 500px;
+
+  /*create effect*/
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+#content {
+  height:1000px;
+  font-size:36px
+}
