@@ -134,3 +134,8 @@ label>input:focus:invalid {
     background-color:#FF9143;
     box-shadow:0 1px 8px rgba(0,0,0,0.5);
 }
+
+#password + #right ul {
+  color: #f11;
+  /* list-style-type:none; */
+}
