@@ -1,27 +1,29 @@
 :root {
-  /* for defining variables only! */
-  --background: #ff9143;
+    /* for defining variables only! */
+    --background: #ff9143;
 }
 
 body {
-  background: var(--background);
+    background: var(--background);
 }
 
 .parallax {
-  /*graphic*/
-  background-image: url("C:\Users\Liam Taylor\Desktop\Uni\INSE\INSE\test\sportX_graphic.png");
-
-  /*set height*/
-  min-height: 500px;
-
-  /*create effect*/
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size:cover;
+    /*graphic*/
+    /**
+     * Use relative addresses!
+     */
+    /* background-image: url("C:\Users\Liam Taylor\Desktop\Uni\INSE\INSE\test\sportX_graphic.png"); */
+    background-image: url("../sportX_graphic.png");
+    /*set height*/
+    min-height: 500px;
+    /*create effect*/
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #content {
-  height:1000px;
-  font-size:36px
+    height: 1000px;
+    font-size: 36px
 }

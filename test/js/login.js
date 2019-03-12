@@ -100,8 +100,11 @@ function checkPasswordValid(e) {
     const elems = [document.getElementById("lowercase"), document.getElementById("uppercase"), document.getElementById("number"), document.getElementById("special"), document.getElementById("length")];
 
     for (let i = 0; i < regexs.length; i++) {
-        elems[i].style.color = (regexs[i].test(e.value)) ? "#2F8" : "#F11";
+        if (elems[i]) elems[i].style.color = (regexs[i].test(e.value)) ? "#2F8" : "#F11";
     }
+
+    console.log(regex.test(e.value));
+    console.log(e.style.borderBottomColor);
 
     e.style.borderBottomColor = (regex.test(e.value)) ? "#2F8" : "#F11";
 }

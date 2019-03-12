@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <link rel="stylesheet" href="css/master.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/login.css">
     <meta charset="utf-8">
     <title>Login | Signup</title>
-  </head>
-  <body>
+</head>
+
+<body>
 
     <nav id="nav"></nav>
 
     <div id="login-wrapper">
-      <h1 id="login-signup-h">Login</h1>
-      <label id="email-label">Email
+        <h1 id="login-signup-h">Login</h1>
+        <label id="email-label">Email
         <input type="email" id="email" name="email" required placeholder="example@example.com" autofocus>
       </label>
-      <label id="password-label">Password
+        <label id="password-label">Password
         <input type="password" id="password" name="password" required placeholder="Enter Password">
         <div id="right">
           <h3>Password MUST contain:</h3>
-          <ul id = "requirements list">
-            <li> Lowecase characters </li>
-            <li> Uppercase characters </li>
-            <li> Numbers </li>
-            <li> Special characters (!,?,@,$,%,&amp; or *) </li>
+          <ul id="requirements">
+            <li id="lowercase">Lowecase characters</li>
+            <li id="uppercase">Uppercase characters</li>
+            <li id="number">Numbers</li>
+            <li id="special">Special characters (!, ?, @, $, %, &amp; or *)</li>
 
         <!--
         <p id="lowercase">contain lowercase</p>
@@ -34,18 +35,20 @@
           <p id="special">contain !, ?, @, $, %, &amp; or *</p>
           <p id="length">be between 8 and 50 characters</p>
         -->
+        <!--following <i> tag for displaying arrow-->
         <i></i>
         </div>
       </label>
-      <label id="confirm-password-label">Confirm Password
+        <label id="confirm-password-label">Confirm Password
         <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm Password">
       </label>
-      <button id="submit">Submit</button>
+        <button id="submit">Submit</button>
 
     </div>
 
     <script src="js/login.js"></script>
     <script src="js/master.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  </body>
+</body>
+
 </html>
