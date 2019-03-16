@@ -8,7 +8,8 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node ./test/server.js"
+        "start": "node ./test/server.js",
+        "init_sql": "mysql -u root < sql_init.sql"
     },
     "repository": {
         "type": "git",
