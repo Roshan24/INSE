@@ -2,27 +2,26 @@
 
 window.addEventListener("load", () => {
 
-  loadNavBar();
-  checkLoggedIn();
+    loadNavBar();
+    checkLoggedIn();
 
-  window.addEventListener("scroll", (e) => {
-    handleScroll(e);
-  });
-
-  const login = document.getElementById("login");
-  if (login) {
-    login.addEventListener("click", () => {
-      localStorage.setItem("login", "true");
+    window.addEventListener("scroll", (e) => {
+        handleScroll(e);
     });
-  }
 
-  const signup = document.getElementById("signup");
-  if (signup) {
-    signup.addEventListener("click", () => {
-      localStorage.setItem("login", "false");
-    });
-  }
+    const login = document.getElementById("login");
+    if (login) {
+        login.addEventListener("click", () => {
+            localStorage.setItem("login", "true");
+        });
+    }
 
+    const signup = document.getElementById("signup");
+    if (signup) {
+        signup.addEventListener("click", () => {
+            localStorage.setItem("login", "false");
+        });
+    }
 
 });
 
@@ -63,35 +62,35 @@ function styleMobileNav() {
  * @param e   The screen
  */
 function handleScroll(e) {
-  e.preventDefault();
-  //Below finds where the user has scrolled to
-  let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    e.preventDefault();
+    //Below finds where the user has scrolled to
+    let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
-   if (scrollTop > 0) {
-     $('nav').css("box-shadow", "0 0 5px rgba(0, 0, 0, 0.3)");
-   } else {
-     $('nav').css("box-shadow", "0 -5px 3px rgba(0, 0, 0, 0.3)");
-   }
+    if (scrollTop > 0) {
+        $('nav').css("box-shadow", "0 0 5px rgba(0, 0, 0, 0.3)");
+    } else {
+        $('nav').css("box-shadow", "0 -5px 3px rgba(0, 0, 0, 0.3)");
+    }
 }
 
 // Below function uses localStorage to check whether user
 // is logged in, and ajusts nav bar accordingly
 function checkLoggedIn() {
-  const navLogin = document.getElementById("nav-login");
+    const navLogin = document.getElementById("nav-login");
 
-  if (localStorage.getItem("loggedIn") == undefined) {
-    localStorage.setItem("loggedIn", "false");
-    navLogin.innerHTML = '<a href="login.html">Login</a> or <a href="login.html" id="signup">Sign up</a>'
-  } else if (localStorage.getItem("loggedIn") == "false") {
-    navLogin.innerHTML = '<a href="login.html" id="login">Login</a> or <a href="login.html" id="signup">Sign up</a>'
-  } else if (localStorage.getItem("loggedIn") == "true") {
-    navLogin.innerHTML = '<i class="material-icons" id="account">account_circle</i>'
+    if (localStorage.getItem("loggedIn") == undefined) {
+        localStorage.setItem("loggedIn", "false");
+        navLogin.innerHTML = '<a href="login.html">Login</a> or <a href="login.html" id="signup">Sign up</a>'
+    } else if (localStorage.getItem("loggedIn") == "false") {
+        navLogin.innerHTML = '<a href="login.html" id="login">Login</a> or <a href="login.html" id="signup">Sign up</a>'
+    } else if (localStorage.getItem("loggedIn") == "true") {
+        navLogin.innerHTML = '<i class="material-icons" id="account">account_circle</i>'
 
-    const account = document.getElementById("account");
-    account.addEventListener("click", (e) => {
-        handleAccountBtnClicked();
-    });
-  }
+        const account = document.getElementById("account");
+        account.addEventListener("click", (e) => {
+            handleAccountBtnClicked();
+        });
+    }
 
 }
 

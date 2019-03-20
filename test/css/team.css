@@ -1,0 +1,114 @@
+* {
+    transition: all 0.2s ease-in-out;
+}
+
+#team-container {
+    position: absolute;
+    top: 10vh;
+    /* height: 80vh; */
+    height: auto;
+    left: 5vw;
+    width: 90vw;
+    /* max-width: 1000px; */
+    display: flex;
+    /* justify-content: center; */
+    align-content: center;
+    flex-direction: column;
+    /* background-color: red; */
+}
+
+.team {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr 1fr 2.5fr 1fr 1fr 0.25fr;
+    grid-template-rows: 0.5fr 0.25fr 2fr 0.25fr;
+    grid-template-areas: ". name name name name name ." ". sport sport sport sport sport ." ". description description description description description ." "gender gender . location . ability ability";
+    top: 0;
+    width: 90vw;
+    height: 38%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    /* border-top: solid 10px #ff9143; */
+}
+
+.players {
+    position: absolute;
+    background-color: #ff9143;
+    height: 12px;
+    width: 75%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    z-index: 2;
+    color: #ff9143;
+    text-align: center;
+    font-size: 10px;
+}
+
+.player-outline {
+    position: absolute;
+    background-color: red;
+    height: 12px;
+    margin-left: 73%;
+    width: 27%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    z-index: 1;
+    text-align: center;
+    font-size: 10px;
+    color: red;
+}
+
+.team:hover .players,
+.team:hover .player-outline {
+    height: 20px;
+    color: white;
+    font-size: 18px;
+}
+
+.team:hover .name {
+    margin-top: 23px;
+}
+
+.name {
+    margin-top: 15px;
+    grid-area: name;
+    text-align: center;
+    font-size: 2.25rem;
+}
+
+.sport {
+    grid-area: sport;
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+.description {
+    grid-area: description;
+    /* background-color: red; */
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: 1.25rem;
+    overflow: hidden;
+}
+
+.gender,
+.location,
+.ability {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 1%;
+}
+
+.gender {
+    grid-area: gender;
+}
+
+.location {
+    grid-area: location;
+}
+
+.ability {
+    grid-area: ability;
+}
