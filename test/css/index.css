@@ -15,7 +15,7 @@ body {
     /* background-image: url("C:\Users\Liam Taylor\Desktop\Uni\INSE\INSE\test\sportX_graphic.png"); */
     background-image: url("../sportX_graphic.png");
     /*set height*/
-    min-height: 500px;
+    min-height: 750px;
     /*create effect*/
     background-attachment: fixed;
     background-position: center;
