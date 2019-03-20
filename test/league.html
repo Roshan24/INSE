@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <link rel="stylesheet" href="css/master.css">
-        <meta charset="utf-8">
-        <title>Sport team finder</title>
-    </head>
 
-    <body>
-        <nav id="nav">
-        </nav>
-        <script src="js/master.js"></script>
-        <!-- <form></form> -->
-    </body>
+<head>
+  <link rel="stylesheet" href="css/master.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/profile.css">
+  <meta charset="utf-8">
+  <title>Sport team finder</title>
+</head>
+
+<body>
+  <nav id="nav">
+  </nav>
+  <div id=main>
+    <h1>Create a League</h1>
+
+    <div>
+      <div>
+        <label>
+          <input type="input" name="name" required placeholder="League Name">
+        </label>
+      </div>
+      <div>
+        <label>
+        <input type ="imput" name="Min" min="0" max="10" required placeholder="Min. Number of Teams">
+      </label>
+      </div>
+      <div>
+    <label>
+      <input type ="imput" name="Min" min="11" max="20" required placeholder="Max. Number of Teams">
+    </label>
+  </div>
+      <label>
+        <form>
+          <select name="Ability level">
+            <option value="Professional">Professional</option>
+            <option value="Medium">Medium</option>
+            <option value="Beginner">Beginner</option>
+          </select>
+        </form>
+      </label>
+
+      <label>
+        <input type="text" name="description" height="10px" max="100" required placeholder="League Description">
+      </label>
+
+    </div>
+
+
+    <script src="js/master.js"></script>
+</body>
+
 </html>
