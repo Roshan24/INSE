@@ -1,136 +1,150 @@
 :root {
-  --background: #ff9143;
+    --background: #ff9143;
 }
 
 #login-wrapper {
-  position: absolute;
-  top: 15vh;
-  left: 20vw;
-  width: 60vw;
-  height: 85vh;
-  display: flex;
-  justify-content: center;
-  text-align: center;
+    position: absolute;
+    top: 15vh;
+    left: 20vw;
+    width: 60vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 #login-signup-h {
-  margin-top: 20px;
-  font-size: 3.5rem;
+    margin-top: 20px;
+    font-size: 3.5rem;
 }
 
 #submit {
-  position: inherit;
-  height: auto;
-  width: auto;
-  padding: 25px 175px 25px 175px;
-  bottom: 30px;
-  justify: center;
-  font-size: 1.5rem;
-  border: 0;
-  background-color: var(--background);
-  color: white;
-  border-radius: 40px;
+    position: inherit;
+    height: auto;
+    width: auto;
+    padding: 25px 175px 25px 175px;
+    bottom: 30px;
+    /* justify: center; */
+    font-size: 1.5rem;
+    border: 0;
+    background-color: var(--background);
+    color: white;
+    border-radius: 40px;
 }
 
-#submit:hover, #submit:focus {
-  background-color: #333;
-  cursor: pointer;
+#submit:hover,
+#submit:focus {
+    background-color: #333;
+    cursor: pointer;
 }
 
 label {
-  position: absolute;
-  font-size: 2rem;
+    position: absolute;
+    font-size: 2rem;
 }
 
 label>input {
-  display: block; /* forces input onto next line */
-  margin-top: 15px;
-  border: 0;
-  border-bottom: 2px solid var(--background);
-  width: 300px;
-  height: auto;
-  font-size: 20px;
-  text-align: center;
-  outline: 0;
-  transition: width 0.2s ease-in-out;
+    display: block;
+    /* forces input onto next line */
+    margin-top: 15px;
+    border: 0;
+    border-bottom: 2px solid var(--background);
+    width: 300px;
+    height: auto;
+    font-size: 20px;
+    text-align: center;
+    outline: 0;
+    transition: width 0.2s ease-in-out;
 }
 
 label>input:focus {
-  width: 375px;
+    width: 375px;
 }
 
 label>input:valid {
-  border-bottom-color: #2f8;
+    border-bottom-color: #2f8;
 }
 
 label>input:focus:invalid {
-  border-bottom-color: #f11;
+    border-bottom-color: #f11;
 }
 
 #email-label {
-  top: 20%;
+    top: 20%;
 }
 
 #password-label {
-  top: 40%;
+    top: 40%;
 }
 
 #confirm-password-label {
-  top: 60%;
+    top: 60%;
 }
 
 ::placeholder {
-  text-align: center;
+    text-align: center;
 }
+
 
 /**********************************/
 
-#password + #right {
-    min-width:250px;
-    max-width:300px;
-    top:50%;
-    left:100%;
-    margin-left:20px;
-    transform:translate(0, -50%);
-    padding:10px 20px;
-    color:#FFF;
-    background-color:#FF9143;
-    font-weight:normal;
-    font-size:13px;
-    border-radius:8px;
-    position:absolute;
-    z-index:99999999;
-    box-sizing:border-box;
-    box-shadow:0 1px 8px rgba(0,0,0,0.5);
-    display:none;
+#right {
+    min-width: 250px;
+    max-width: 300px;
+    /* top: 50%; */
+    top: 0;
+    left: 100%;
+    margin-left: 20px;
+    /* transform: translate(0, -50%); */
+    padding: 10px 20px;
+    color: #FFF;
+    background-color: #FF9143;
+    font-weight: normal;
+    font-size: 13px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 99999999;
+    box-sizing: border-box;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+    display: none;
 }
 
-#password + #right p {
-  color: #F11;
+
+/* #right p {
+    color: #F11;
+} */
+
+#password:focus+#right {
+    display: block;
 }
 
-#password:focus + #right {
-    display:block;
+#right i {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -12px;
+    width: 12px;
+    height: 24px;
+    overflow: hidden;
 }
 
-#password + #right i {
-    position:absolute;
-    top:50%;
-    right:100%;
-    margin-top:-12px;
-    width:12px;
-    height:24px;
-    overflow:hidden;
+#right i::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 0;
+    top: 50%;
+    transform: translate(50%, -50%) rotate(-45deg);
+    background-color: #FF9143;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
-#password + #right i::after {
-    content:'';
-    position:absolute;
-    width:12px;
-    height:12px;
-    left:0;
-    top:50%;
-    transform:translate(50%,-50%) rotate(-45deg);
-    background-color:#FF9143;
-    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+#right ul {
+    margin: 0;
+    left: 0;
+    color: #f11;
+    /* list-style-type:none; */
+    list-style: none;
+    text-align: center;
 }
