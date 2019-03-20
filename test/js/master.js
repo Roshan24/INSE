@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
 //Loads and styles the navigtion bar
 function loadNavBar() {
     const nav = document.getElementById("nav");
-    nav.innerHTML = '<a href="index.html" class="active">Home</a><a href="team.html">Teams</a><a href="league.html">Leagues</a><a href="about-us.html">About Us</a><span id="nav-login"><i class="material-icons" id="account">account_circle</i><a href="login.html" id="login">Login</a> or <a href="login.html" id="signup">Sign up</a></span>';
+    nav.innerHTML = '<a href="index.html" class="active">Home</a><a href="teamCreate.html">Teams</a><a href="league.html">Leagues</a><a href="about-us.html">About Us</a><span id="nav-login"><i class="material-icons" id="account">account_circle</i><a href="login.html" id="login">Login</a> or <a href="login.html" id="signup">Sign up</a></span>';
 
     setActive(window.location.href, nav);
 }
