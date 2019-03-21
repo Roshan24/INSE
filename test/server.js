@@ -3,6 +3,7 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql2');
+let sqlPromise;
 
 app.get('/', (req, res) => {
     res.redirect('./index.html');
