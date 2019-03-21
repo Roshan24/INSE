@@ -24,39 +24,6 @@ img{
 
 }
 
-#profilePicture{
-  position: fixed;
-  /* top: 15vh; */
-  left: -40vh;
-  width: 60vw;
-  /* height: 85vh; */
-}
-
-#main{
-  position: absolute;
-  top: 15vh;
-  left: 20vw;
-  width: 60vw;
-  height: 85vh;
-  justify-content: center;
-  text-align: center;
-
-}
-
-h1{
-  margin-top: 20px;
-  font-size: 3.5rem;
-}
-
-p{
-  margin-top: 100px;
-}
-
-
-#account {
-  font-size: 36px;
-}
-
 #nav {
   top: 0;
   position: fixed;
@@ -72,19 +39,19 @@ p{
   z-index: 10;
 }
 
-#nav>a {
+#nav>a, .dropdown>a {
   color: white;
   top: 1.9vh;
 }
 
-#nav>a, #nav-login {
+#nav>a, #nav-login, .dropdown>a {
   position: relative;
   padding: 7px 30px 7px 30px;
   margin: 0 5px 0 5px;
   border-radius: 5px;
 }
 
-#nav>a, #nav-login>a {
+#nav>a, #nav-login>a, .dropdown>a {
   text-decoration: none;
 }
 
@@ -97,16 +64,49 @@ p{
   height: calc(var(--nav-font-size) + 1px);
 }
 
-#nav>a:hover {
+#nav>a:hover, .dropdown>a:hover {
   background-color: black;
   color: white;
 }
 
-#nav>a.active {
+#nav>a.active, .dropdown>a.active {
   background-color: white;
   color: black;
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: none;
+  height: 10px;
+}
 
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: ;
+  min-width: 120px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 9px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: black;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: black;
+}
 #mobile-nav {
   display: none;
 }
