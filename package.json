@@ -9,7 +9,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node ./test/server.js",
-        "init_sql": "mysql -h sportvantage.ctmxdnghtprt.eu-west-2.rds.amazonaws.com -P 3306 -u sportvantage -p Insegroup7c < init_sql.sql"
+        "init_sql": "mysql -h sportvantage.ctmxdnghtprt.eu-west-2.rds.amazonaws.com -P 3306 -u sportvantage -p Insegroup7c < test/init_sql.sql"
     },
     "repository": {
         "type": "git",

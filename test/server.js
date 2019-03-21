@@ -15,7 +15,7 @@ app.post('/profile.html', (req, res) => {
     console.log("It worked!");
 });
 
-app.post('/teamJoin.html', (req, res) => {
+app.get('/teamJoin.html', (req, res) => {
     return getTeams();
 })
 

@@ -124,28 +124,3 @@ function checkConfirmPasswordValid(e) {
 
     e.style.borderBottomColor = (e.value === password) ? "#2F8" : "#F11";
 }
-
-/**
- * Sends a post request to the server.
- *
- * @param url            url post request is sent to
- *
- * @param data           data sent with the post request 
- *                       to url in JSON format
- *
- * @return jsonResponse  JSON response from the server
- */
-async function postDataToServer(url = ``, data = {}) {
-    const response = fetch(url, {
-        method: "POST",
-        mode: "same-origin",
-        cache: "no-cache",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-    });
-    console.log(url);
-    // const jsonResponse = response.JSON();
-    // return jsonResponse;
-}
