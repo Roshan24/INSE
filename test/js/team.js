@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
 
 //     const res = await fetch(`${dir}/teamJoin.html`, { method: GET });
 //     console.log(res);
-}
+// }
 
 /**
  * Sends a post request to the server.

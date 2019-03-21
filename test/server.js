@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
     console.log("Test");
 });
 
+app.get('/index.html', (req, res) => {
+    consolele.log("index");
+})
+
 app.get('*', (req, res) => {
     console.log("This is working");
 })
