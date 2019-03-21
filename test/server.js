@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/index.html', (req, res) => {
-    consolele.log("index");
+    console.log("index");
 })
 
 app.get('*', (req, res) => {
