@@ -14,15 +14,15 @@ window.addEventListener('load', () => {
 
 
 
-    getTeams();
+    // getTeams();
 
 });
 
-async function getTeams() {
-    const dir = window.location.href.slice(0, window.location.href.lastIndexOf("/"));
+// async function getTeams() {
+//     const dir = window.location.href.slice(0, window.location.href.lastIndexOf("/"));
 
-    const res = await fetch(`${dir}/teamJoin.html`, { method: GET });
-    console.log(res);
+//     const res = await fetch(`${dir}/teamJoin.html`, { method: GET });
+//     console.log(res);
 }
 
 /**

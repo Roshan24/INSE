@@ -7,7 +7,12 @@ let sqlPromise;
 
 app.get('/', (req, res) => {
     res.redirect('./index.html');
+    console.log("Test");
 });
+
+app.get('*', (req, res) => {
+    console.log("This is working");
+})
 
 app.use(express.static(__dirname));
 
